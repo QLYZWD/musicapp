@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_now_playing">
+
+    <fragment
+        android:id="@+id/navigation_now_playing"
+        android:name="com.example.music.ui.nowplaying.NowPlayingFragment"
+        android:label="@string/title_now_playing"
+        tools:layout="@layout/fragment_now_playing" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.music.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_charts"
+        android:name="com.example.music.ui.charts.ChartsFragment"
+        android:label="@string/title_charts"
+        tools:layout="@layout/fragment_charts">
+        <!-- 导航到排行榜歌曲列表页面 -->
+        <action
+            android:id="@+id/action_charts_to_chartsList"
+            app:destination="@id/chartsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chartsListFragment"
+        android:name="com.example.music.ui.charts.ChartsListFragment"
+        android:label="排行榜列表"
+        tools:layout="@layout/fragment_charts_list">
+        <!-- 导航到歌曲详情页面 -->
+        <action
+            android:id="@+id/action_chartsList_to_songDetails"
+            app:destination="@id/songDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.music.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/songDetailsFragment"
+        android:name="com.example.music.ui.details.SongDetailsFragment"
+        android:label="歌曲详情"
+        tools:layout="@layout/fragment_song_details" />
+</navigation>

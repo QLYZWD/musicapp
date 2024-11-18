@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MusicApp</string>
+    <string name="title_now_playing">正在播放</string>
+    <string name="title_search">搜索</string>
+    <string name="title_charts">排行榜</string>
+    <string name="title_profile">个人页面</string>
+</resources>
